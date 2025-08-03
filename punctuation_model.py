@@ -114,25 +114,14 @@ class PunctuationModel:
         self._print_verbose(f"Tokenizer path: {self.cache_dir}")
         try:
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, cache_dir=self.cache_dir)
-            if self.tokenizer.pad_token is None:
-                self._print_verbose("Tokenizer PAD token is None, setting to EOS token.")
-                self.tokenizer.pad_token = self.tokenizer.eos_token
             
-            
-            self._print_verbose(f"Tokenizer initial padding_side: {self.tokenizer.padding_side}")
-         
+            self._print_verbose(f"Tokenizer initial padding_side: {self.tokenizer.padding_side}")         
 
             self.pad_token_id = self.tokenizer.pad_token_id
             self.bos_token_id = self.tokenizer.bos_token_id
             self.eos_token_id = self.tokenizer.eos_token_id
             self._print_verbose(f"Tokenizer loaded. BOS: {self.bos_token_id}, EOS: {self.eos_token_id}, PAD: {self.pad_token_id}, Padding Side: {self.tokenizer.padding_side}")
             
-            # Ensure all potential special token IDs are captured, even if some are None
-            self.special_token_ids = set()
-            if self.bos_token_id is not None: self.special_token_ids.add(self.bos_token_id)
-            if self.eos_token_id is not None: self.special_token_ids.add(self.eos_token_id)
-            if self.pad_token_id is not None: self.special_token_ids.add(self.pad_token_id)
-            self._print_verbose(f"Registered special token IDs for skipping: {self.special_token_ids}")
 
         except Exception as e:
             print(f"FATAL: Error loading tokenizer: {e}"); raise
