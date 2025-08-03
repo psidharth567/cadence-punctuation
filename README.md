@@ -2,7 +2,7 @@
 
 A multilingual punctuation restoration model based on Gemma-3-1b
 
-Paper: (https://arxiv.org/abs/2506.03793)[arXiv]
+Paper: [arXiv](https://arxiv.org/abs/2506.03793)
 
 ## Features
 - **Multilingual Support**: English + 22 Indic languages
