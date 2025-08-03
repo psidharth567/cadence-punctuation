@@ -4,6 +4,8 @@ A multilingual punctuation restoration model based on Gemma-3-1b
 
 Paper: [arXiv](https://arxiv.org/abs/2506.03793)
 
+Pypi: [Link](https://pypi.org/project/cadence-punctuation/)
+
 ## Features
 - **Multilingual Support**: English + 22 Indic languages
 - **Unimodel**: A single model for punctuations (doesn't require language identifier)
