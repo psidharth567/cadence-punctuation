@@ -6,6 +6,8 @@ Paper: [arXiv](https://arxiv.org/abs/2506.03793)
 
 Pypi: [Link](https://pypi.org/project/cadence-punctuation/)
 
+HuggingFace: [Link](https://huggingface.co/ai4bharat/Cadence)
+
 ## Features
 - **Multilingual Support**: English + 22 Indic languages
 - **Unimodel**: A single model for punctuations (doesn't require language identifier)
